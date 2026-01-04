@@ -31,6 +31,12 @@ def get_rates(mock: bool = False) -> dict:
 # made this call with mock = false which is defaults get rates and json dump into file rates.json
 # get_rates()
 
+def get_currency(currency: str, rates: dict) -> float:
+    currency: str = currency.upper()
+    if currency in rates.keys();
+        return rates.get(currency)
+    else:
+        raise ValueError(f'"{currency}" is not a valid currency. maybe you missed a letter or mixed a letter :)')
 
 
 def convert_currency(amount: float, base: str, vs: str, rates: dict) -> float:
